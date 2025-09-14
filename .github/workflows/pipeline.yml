@@ -12,13 +12,13 @@ jobs:
         - name: Checkout Code
           uses: actions/checkout/@v5
 
-        - name: Set up Nodejs 
-          uses: actions/setup-node@v3
+        - name: Set up Bun
+          uses: oven-sh/setup-bun@v1
           with:
-            node-version: 16
+            bun-version: latest
         
         - name: Install Dependencies
-          run: npm install
+          run: bun install
 
         - name: Run test
-          run: npm test
+          run: bun test
